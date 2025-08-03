@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dziennik wdzięczności</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4a7">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+<script>
+  const haslo = "tajne123";
+  const podane = prompt("🔒 Podaj hasło, aby otworzyć dziennik:");
+  if (podane !== haslo) {
+    document.documentElement.innerHTML = ""; // całkowicie usuwa stronę
+    alert("❌ Nieprawidłowe hasło!");
+    throw new Error("Błędne hasło");
+  }
+</script>
+  <link rel="stylesheet" href="tryb_nocny.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📔 Dziennik Wdzięczności</h1>
+
+    <div class="streak">
+      <p>🔥 Dni z rzędu: <span id="streakCount">0</span></p>
+      <div class="progress">
+        <div id="progressBar"></div>
+      </div>
+    </div>
+
+    <textarea id="entry" placeholder="Za co dziś jesteś wdzięczny?"></textarea>
+    <button onclick="addEntry()">Dodaj</button>
+    <ul id="entries"></ul>
+
+    <h2>Moje afirmacje i cytaty</h2>
+    <textarea id="quoteInput" placeholder="Wpisz afirmację lub cytat..."></textarea>
+    <button onclick="addQuote()">Dodaj</button>
+    <ul id="quoteList"></ul>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="modlitwy.html" style="color:#4a7; text-decoration:none;">🙏 Przejdź do moich modlitw</a>
+    </div>
+<div style="text-align:center; margin-top:1rem;">
+  <a href="cytaty.html" style="color:#4a7; text-decoration:none;">📘 Przejdź do cytatów Biblijnych</a>
+</div>
+    <h2>Kalendarz wdzięczności</h2>
+    <div class="calendar-wrapper">
+      <div class="calendar-header" id="calendarHeader"></div>
+      <div class="calendar-grid" id="calendar"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+<script src="tryb_nocny.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js").then(() => {
+      console.log("✅ Service Worker zarejestrowany");
+    });
+  }
+</script>
+</body>
+</html>

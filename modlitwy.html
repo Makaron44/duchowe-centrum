@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moje modlitwy</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4a7">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tryb_nocny.css">
+</head>
+<body>
+  <div class="container">
+    <div id="countdownBox"></div>
+
+    <h1>🙏 Moje modlitwy</h1>
+
+    <textarea id="prayerInput" placeholder="Wpisz swoją modlitwę..."></textarea>
+    <label for="prayerType">Typ modlitwy:</label>
+    <select id="prayerType">
+      <option value="Poranna">☀️ Poranna</option>
+      <option value="Wieczorna">🌙 Wieczorna</option>
+      <option value="Uniwersalna">🌸 Uniwersalna</option>
+    </select>
+    <br><br>
+    <button onclick="addPrayer()">Dodaj</button>
+
+    <ul id="prayerList"></ul>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="index.html" style="color:#4a7; text-decoration:none;">⬅️ Powrót do dziennika</a>
+    </div>
+<div style="text-align:center; margin-top:1rem;">
+  <a href="cytaty.html" style="color:#4a7; text-decoration:none;">📘 Przejdź do cytatów Biblijnych</a>
+</div>
+  </div>
+  <script src="modlitwy.js"></script>
+  <script src="tryb_nocny.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").then(() => {
+        console.log("✅ Service Worker zarejestrowany");
+      });
+    }
+  </script>
+</body>
+</html>

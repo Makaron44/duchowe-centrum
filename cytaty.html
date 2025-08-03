@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📘 Ulubione cytaty biblijne</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4a7">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tryb_nocny.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📘 Ulubione cytaty biblijne</h1>
+
+    <textarea id="quoteInput" placeholder="Wpisz cytat..."></textarea>
+    <label for="quoteCategory">Kategoria:</label>
+    <select id="quoteCategory">
+      <option value="Pocieszenie">🕊️ Pocieszenie</option>
+      <option value="Siła">✊ Siła</option>
+      <option value="Wiara">🙏 Wiara</option>
+    </select>
+    <br><br>
+    <button onclick="addBibleQuote()">Dodaj cytat</button>
+
+    <ul id="bibleQuoteList"></ul>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="index.html" style="color:#4a7; text-decoration:none;">⬅️ Powrót do dziennika</a>
+    </div>
+  </div>
+
+  <script src="cytaty.js"></script>
+  <script src="tryb_nocny.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js").then(() => {
+        console.log("✅ Service Worker zarejestrowany");
+      });
+    }
+  </script>
+</body>
+</html>

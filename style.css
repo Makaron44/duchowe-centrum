@@ -1,0 +1,154 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom, #e6f0ff, #fef6e4);
+  color: #333;
+  padding: 2rem;
+  transition: background 0.5s ease;
+background-image: url('images/kwiat.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  resize: vertical;
+box-sizing: border-box;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #89c9b8;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5ba999;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  background: #fff;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+li button {
+  float: right;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+h1, h2 {
+  text-align: center;
+  color: #444;
+}
+.streak {
+  margin-bottom: 1rem;
+}
+.progress {
+  width: 100%;
+  background: #ccc;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#progressBar {
+  height: 10px;
+  background: #4caf50;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+.calendar-wrapper {
+  margin-top: 1rem;
+}
+.calendar-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+.calendar-grid div {
+  text-align: center;
+  padding: 10px;
+  background-color: #f4fdfc;
+  border: 1px solid #d0ebe4;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.calendar-grid .day-name {
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+.calendar-grid .marked {
+  background-color: #d3f8e2;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  textarea {
+    height: 80px;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  li {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  li button {
+    float: none;
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0 0 0;
+  }
+
+  .calendar-grid {
+    font-size: 0.8rem;
+  }
+}
